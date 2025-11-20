@@ -19,6 +19,7 @@ namespace Shopmate.Models
             this.FullName = fullname;
             this.UserName = username;
             this.Password = password;
+            this.ShopName = "-";
         }
         public void Details()
         {
@@ -30,7 +31,7 @@ namespace Shopmate.Models
             return this.Password == password;
         }
     }
-    class Users
+    static class Users
     {
         private static User[] users = new User[100];
         private static int UserCount = 0;

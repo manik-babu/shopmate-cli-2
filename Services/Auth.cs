@@ -1,5 +1,6 @@
 using System.Threading;
 using Shopmate.Models;
+using Shopmate.Utils;
 
 namespace Shopmate.Services
 {
@@ -27,40 +28,29 @@ namespace Shopmate.Services
                 Signup();
             }
         }
-        public static void Loading(string topic, int time)
-        {
-            Console.Write(topic);
-            Thread.Sleep(time / 4);
-            Console.Write(".");
-            Thread.Sleep(time / 4);
-            Console.Write(".");
-            Thread.Sleep(time / 4);
-            Console.Write(".");
-            Thread.Sleep(time / 4);
-            Console.WriteLine();
-        }
         public static void Login()
         {
             Console.WriteLine("Welcome back!");
-            Thread.Sleep(500);
+            ShopMateUtils.Loading(500);
             Console.WriteLine("Please enter your details to login.");
-            Thread.Sleep(1000);
+            ShopMateUtils.Loading(1000);
             Console.Write("Username: ");
             string userName = Console.ReadLine();
             Console.Write("Password: ");
             string password = Console.ReadLine();
-            Loading("Logging in", 2000);
+            ShopMateUtils.Loading("Logging in", 1500);
             if (Users.Exists(userName, password))
             {
                 loggedInUser = Users.Get(userName);
                 Console.WriteLine("Login Successfull!");
-                // Home();
+                Console.WriteLine($"Welcome back {loggedInUser.FullName}");
+                App.Home();
             }
             else
             {
-                Thread.Sleep(500);
+                ShopMateUtils.Loading(500);
                 Console.WriteLine("Username or password incorrect!");
-                Thread.Sleep(1000);
+                ShopMateUtils.Loading(1000);
                 Authinticate();
             }
         }
@@ -68,9 +58,9 @@ namespace Shopmate.Services
         public static void Signup()
         {
             Console.WriteLine("Let's get you set up!");
-            Thread.Sleep(500);
+            ShopMateUtils.Loading(500);
             Console.WriteLine("Please enter the following details to create an account.");
-            Thread.Sleep(1000);
+            ShopMateUtils.Loading(1000);
             Console.Write("Full name: ");
             string fullName = Console.ReadLine();
             Console.Write("Create a password: ");
@@ -81,18 +71,18 @@ namespace Shopmate.Services
             while (Users.Exists(userName))
             {
                 Console.WriteLine("Username already exist!");
-                Thread.Sleep(300);
+                ShopMateUtils.Loading(300);
                 Console.WriteLine("Please choose another.");
-                Thread.Sleep(300);
+                ShopMateUtils.Loading(300);
                 Console.WriteLine("Create an username: ");
                 userName = Console.ReadLine();
             }
             Users.Add(fullName, userName, password);
-            Loading("Creating account", 2000);
+            ShopMateUtils.Loading("Creating account", 1500);
             Console.WriteLine("Signup successfull!");
-            Thread.Sleep(500);
+            ShopMateUtils.Loading(500);
             Console.WriteLine("Please login with your username and password");
-            Thread.Sleep(1000);
+            ShopMateUtils.Loading(1000);
             Authinticate();
         }
     }
