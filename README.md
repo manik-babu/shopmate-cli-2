@@ -1,0 +1,66 @@
+# 🛒 ShopMate CLI
+A simple and clean C# command-line eCommerce application where users can buy and sell products.
+
+---
+
+## 🚀 Features
+- User registration & login system  
+- Add products for sale  
+- View all listed products  
+- Buy products from other users  
+- View your own product listings  
+- Check purchase history  
+- Simple file/database storage system  
+
+---
+
+## 📦 Tech Stack
+- **Language:** C#  
+- **Framework:** .NET  
+- **Application Type:** Console / CLI  
+
+---
+
+## 📂 Project Structure
+```
+ShopMate-CLI/
+│
+├── Models/
+│ ├── User.cs
+│ ├── Product.cs
+│ └── Order.cs
+│
+├── Services/
+│ ├── AuthService.cs
+│ ├── ProductService.cs
+│ └── OrderService.cs
+│
+├── Program.cs
+└── README.md
+```
+---
+
+## 🏁 Run the Project
+### 1. Clone the repository  
+```bash
+git clone https://github.com/manik-babu/shopmate-cli.git
+```
+### 2. Navigate to the folder
+```bash
+cd shopmate-cli
+```
+### 3. Run the application
+```bash
+dotnet run
+```
+### Sample Menu (Example)
+```bash
+1. Register
+2. Login
+3. Add Product
+4. View Products
+5. Buy Product
+6. My Listings
+7. Purchase History
+0. Exit
+```
