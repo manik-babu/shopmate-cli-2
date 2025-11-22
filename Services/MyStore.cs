@@ -52,25 +52,17 @@ namespace Shopmate.Services
             Console.WriteLine("0. Back");
             int choice = ShopMateUtils.ReadChoice(new int[] { 0, 1, 2, 3 });
 
-            if (choice == 0)
+            switch (choice)
             {
-                App.Home();
-            }
-            else if (choice == 1)
-            {
-                // 
-            }
-            else if (choice == 2)
-            {
-                ProductAdd();
-            }
-            else if (choice == 3)
-            {
-                // 
-            }
-            else if (choice == 4)
-            {
-                // 
+                case 0:
+                    App.Home();
+                    break;
+                case 1:
+                    MyProductList();
+                    break;
+                case 2:
+                    ProductAdd();
+                    break;
             }
         }
         public static void ProductAdd()
@@ -92,7 +84,6 @@ namespace Shopmate.Services
             Console.WriteLine("Title: " + title);
             Console.WriteLine("Description: " + description);
             Console.WriteLine("Price: " + price);
-            ShopMateUtils.Loading(1000);
             Console.WriteLine("Ready to sale?");
             Console.WriteLine("1. Add Product");
             Console.WriteLine("2. Cancel");
@@ -104,15 +95,23 @@ namespace Shopmate.Services
                 ShopMateUtils.Loading("Adding", 1500);
                 Console.WriteLine("Product listed successfully!");
                 ShopMateUtils.Loading(500);
-                Console.WriteLine("Would you like to add another?");
-                Console.WriteLine("1. Yes");
-                Console.WriteLine("2. No");
+                Console.WriteLine("1. Add another product");
+                Console.WriteLine("2. View product list");
+                Console.WriteLine("0. Go back to my store");
 
-                int input = ShopMateUtils.ReadChoice(new int[] { 1, 2 });
-                if (input == 1)
-                    ProductAdd();
-                else
-                    StoreHome();
+                int input = ShopMateUtils.ReadChoice(new int[] { 1, 2, 3 });
+                switch (input)
+                {
+                    case 0:
+                        StoreHome();
+                        break;
+                    case 1:
+                        ProductAdd();
+                        break;
+                    case 2:
+                        MyProductList();
+                        break;
+                }
 
             }
             else
@@ -120,7 +119,31 @@ namespace Shopmate.Services
                 StoreHome();
             }
         }
+        public static void MyProductList()
+        {
 
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine($"\tMy Products");
+            Console.WriteLine("---------------------------------");
+            Shopmate.Models.Products.ShowByUsername(Auth.loggedInUser.UserName);
+            Console.WriteLine("1. Remove product");
+            Console.WriteLine("0. Go back to my store");
+            int choice = ShopMateUtils.ReadChoice(new int[] { 0, 1 });
+
+            switch (choice)
+            {
+                case 0:
+                    StoreHome();
+                    break;
+                case 1:
+                    RemoveProduct();
+                    break;
+            }
+        }
+        public static void RemoveProduct()
+        {
+            //
+        }
 
 
     }

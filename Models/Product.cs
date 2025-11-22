@@ -49,6 +49,20 @@ namespace Shopmate.Models
                 products[i].Details();
             }
         }
+        public static void ShowByUsername(string userName)
+        {
+            Console.WriteLine("--------------------------------------------------------");
+            for (int i = 0; i < ProductCount; i++)
+            {
+                if (products[i].Owner == userName)
+                {
+                    Console.WriteLine("Title: " + products[i].Title);
+                    Console.WriteLine("Description: " + products[i].Description);
+                    Console.WriteLine("Price: " + products[i].Price);
+                    Console.WriteLine("--------------------------------------------------------");
+                }
+            }
+        }
         public static Product Get(int id)
         {
             return products[id - 1];

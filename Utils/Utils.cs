@@ -32,5 +32,22 @@ namespace Shopmate.Utils
         {
             Thread.Sleep(time);
         }
+        public static void PageName(string name)
+        {
+            int width = 50;
+            for (int i = 0; i <= width; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
+            Console.Write($" {name} ");
+            Console.WriteLine();
+            for (int i = 0; i <= width; i++)
+            {
+                Console.Write("-");
+            }
+
+            Console.WriteLine();
+        }
     }
 }

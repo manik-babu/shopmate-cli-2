@@ -10,9 +10,10 @@ namespace Shopmate.Services
 
         public static void Authinticate()
         {
-            Console.WriteLine("---------------------------------");
-            Console.WriteLine($"\tAuthintication");
-            Console.WriteLine("---------------------------------");
+            // Console.WriteLine("---------------------------------");
+            // Console.WriteLine($"\tAuthintication");
+            // Console.WriteLine("---------------------------------");
+            ShopMateUtils.PageName("Authenthication");
             Console.WriteLine("1. Login\n2. Signup");
             Console.WriteLine("Choose one (1/2)");
             Console.Write("=> ");
@@ -33,9 +34,10 @@ namespace Shopmate.Services
         }
         public static void Login()
         {
-            Console.WriteLine("---------------------------------");
-            Console.WriteLine($"\tLogin");
-            Console.WriteLine("---------------------------------");
+            // Console.WriteLine("---------------------------------");
+            // Console.WriteLine($"\t\tLogin");
+            // Console.WriteLine("---------------------------------");
+            Console.WriteLine("---------- Login ------------");
             Console.WriteLine("Welcome back!");
             ShopMateUtils.Loading(500);
             Console.WriteLine("Please enter your details to login.");
