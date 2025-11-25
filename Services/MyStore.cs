@@ -82,17 +82,19 @@ namespace Shopmate.Services
             Console.WriteLine("2. Cancel");
             int choice = ShopMateUtils.ReadChoice(new int[] { 1, 2 });
 
-            if (choice == 1)
+            if (choice == 2)
+                StoreHome();
+            else
             {
                 Shopmate.Models.Products.Add(Auth.loggedInUser.UserName, Auth.loggedInUser.ShopName, title, description, price);
-                ShopMateUtils.Loading("Adding", 1500);
+                ShopMateUtils.Loading("Adding", 1000);
                 Console.WriteLine("Product listed successfully!");
                 ShopMateUtils.Loading(500);
                 Console.WriteLine("1. Add another product");
                 Console.WriteLine("2. View product list");
                 Console.WriteLine("0. Go back to my store");
 
-                int input = ShopMateUtils.ReadChoice(new int[] { 1, 2, 3 });
+                int input = ShopMateUtils.ReadChoice(new int[] { 0, 1, 2 });
                 switch (input)
                 {
                     case 0:
@@ -105,11 +107,6 @@ namespace Shopmate.Services
                         MyProductList();
                         break;
                 }
-
-            }
-            else
-            {
-                StoreHome();
             }
         }
         public static void MyProductList()

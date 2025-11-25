@@ -35,7 +35,7 @@ namespace Shopmate.Services
             }
             else if (choice == 3)
             {
-                // MarketPlace();
+                Market.Interface();
             }
 
         }

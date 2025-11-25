@@ -32,6 +32,13 @@ namespace Shopmate.Models
             Console.WriteLine("Description: " + Description);
             Console.WriteLine("Price: " + Price);
         }
+        public void Display()
+        {
+            Console.WriteLine($"Product ID: {ProductId}\t{ShopName}({Owner})");
+            Console.WriteLine("Title: " + Title);
+            Console.WriteLine("Description: " + Description);
+            Console.WriteLine("Price: " + Price);
+        }
 
     }
     static class Products
@@ -42,11 +49,18 @@ namespace Shopmate.Models
         {
             products[ProductCount] = new Product(++ProductCount, owner, shopName, title, description, price);
         }
-        public static void ShowAll(int start, int end)
+        public static void ShowProducts(int start, int end)
         {
-            for (int i = start; i <= end; i++)
+            if (start >= ProductCount)
             {
-                products[i].Details();
+                Console.WriteLine("No more product available in the market!!");
+                return;
+            }
+            for (int i = start; i < end && i < ProductCount; i++)
+            {
+                if (products[i].ProductId == -1) continue;
+                products[i].Display();
+                Console.WriteLine("---------------------------------------------");
             }
         }
         public static void ShowByUsername(string userName)
@@ -56,6 +70,7 @@ namespace Shopmate.Models
             {
                 if (products[i].Owner == userName)
                 {
+                    Console.WriteLine("Product ID: " + products[i].ProductId);
                     Console.WriteLine("Title: " + products[i].Title);
                     Console.WriteLine("Description: " + products[i].Description);
                     Console.WriteLine("Price: " + products[i].Price);
