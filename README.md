@@ -31,9 +31,10 @@ ShopMate-CLI/
 │ └── Order.cs
 │
 ├── Services/
-│ ├── AuthService.cs
-│ ├── ProductService.cs
-│ └── OrderService.cs
+│ ├── Auth.cs
+│ ├── Home.cs
+│ ├── Market.cs
+│ └── MyStore.cs
 │
 ├── Program.cs
 └── README.md
