@@ -45,7 +45,10 @@ namespace Shopmate.Services
             }
 
         }
+        public static void AddToCart(int productId)
+        {
 
+        }
 
     }
 }

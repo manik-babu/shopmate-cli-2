@@ -45,7 +45,9 @@ namespace Shopmate.Services
             {
                 loggedInUser = Users.Get(userName);
                 Console.WriteLine("Login Successfull!");
+                ShopMateUtils.Loading(500);
                 Console.WriteLine($"Welcome back {loggedInUser.FullName}");
+                ShopMateUtils.Loading(1000);
                 App.Home();
             }
             else

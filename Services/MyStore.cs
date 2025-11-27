@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using Shopmate.Models;
 using Shopmate.Utils;
 namespace Shopmate.Services
@@ -156,7 +155,6 @@ namespace Shopmate.Services
             MyProductList();
 
         }
-
 
     }
 }
