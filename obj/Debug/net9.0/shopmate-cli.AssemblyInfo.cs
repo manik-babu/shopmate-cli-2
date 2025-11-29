@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("shopmate-cli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+221faf42d9ab57d505d459e0696be11858d40984")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0237e3bc169f5c8e7b3c58a94e5a9520bc1face")]
 [assembly: System.Reflection.AssemblyProductAttribute("shopmate-cli")]
 [assembly: System.Reflection.AssemblyTitleAttribute("shopmate-cli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

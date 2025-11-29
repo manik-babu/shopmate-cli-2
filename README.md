@@ -26,15 +26,19 @@ A simple and clean C# command-line eCommerce application where users can buy and
 ShopMate-CLI/
 │
 ├── Models/
-│ ├── User.cs
+│ ├── Cart.cs
+│ ├── Order.cs
 │ ├── Product.cs
-│ └── Order.cs
+│ └── User.cs
 │
 ├── Services/
 │ ├── Auth.cs
 │ ├── Home.cs
 │ ├── Market.cs
 │ └── MyStore.cs
+│
+├── Utils/
+│ └── Utils.cs
 │
 ├── Program.cs
 └── README.md
