@@ -78,7 +78,7 @@ namespace Shopmate.Models
                 }
             }
         }
-        public static Product Get(int id)
+        public static Product GetProductById(int id)
         {
             return products[id - 1];
         }

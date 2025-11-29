@@ -10,7 +10,8 @@ class Program
         Thread.Sleep(500);
         Console.WriteLine("Buy and sell anytime, anythings, anywhere!");
         Thread.Sleep(500);
-        Users.Add("Md Manik", "manik", "1234");
+        Shopmate.Helpers.DammyData.AddUser();
+        Shopmate.Helpers.DammyData.AddProduct();
         Auth.Authinticate();
     }
 }
