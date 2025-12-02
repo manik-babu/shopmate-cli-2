@@ -1,12 +1,11 @@
+using Shopmate.Utils;
 namespace Shopmate.Services
 {
     static class App
     {
         public static void Home()
         {
-            Console.WriteLine("---------------------------------");
-            Console.WriteLine($"\tHome");
-            Console.WriteLine("---------------------------------");
+            ShopMateUtils.PageName("Home");
             Console.WriteLine("1. Profile");
             Console.WriteLine("2. My store");
             Console.WriteLine("3. Market place");
