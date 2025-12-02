@@ -63,7 +63,7 @@ namespace Shopmate.Services
                 Shopmate.Models.Carts.Add(product.Owner, Auth.loggedInUser.UserName, quantity, product);
                 ShopMateUtils.Loading("Adding to cart", 1000);
                 Console.WriteLine("Product added to the cart!");
-                ShopMateUtils.Loading("Redirecting to product page", 1000);
+                ShopMateUtils.Loading(500);
 
             }
             MarketProducts(start, end);
